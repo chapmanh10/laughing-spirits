@@ -1,0 +1,11 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header {
+  font-size: large;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  color: rgb(245, 2, 2);
+  border-radius: 0;
+}
