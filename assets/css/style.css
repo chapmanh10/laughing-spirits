@@ -10,3 +10,31 @@ header {
   border-radius: 0;
   padding: 40px 10px;
 }
+
+header h1 {
+  font-weight: bold;
+  margin: 0;
+  font-size: 36px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+header nav ul li a {
+  padding: 10px 15px;
+  font-weight: lighter;
+  font-size: 1.55vw;
+  color: white;
+}
+
+header nav ul li a:hover {
+  color: aquamarine;
+  border-radius: 15px;
+  text-shadow: none;
+}
