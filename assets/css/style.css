@@ -5,11 +5,14 @@ body {
 header {
   background-image: url("https://cdn2.vectorstock.com/i/1000x1000/46/11/cocktails-alcohol-drinks-background-seamless-vector-3514611.jpg");
   font-size: x-large;
-  color: rgb(255, 255, 255);
   background-color: rgba(0, 0, 0, 0.541);
   text-align: center;
   border-radius: 0;
   padding: 20px 10px;
+}
+
+h1 {
+  animation: flicker 8s infinite alternate;
 }
 
 header h1 {
@@ -31,12 +34,54 @@ header nav ul li a {
   padding: 10px 15px;
   font-weight: lighter;
   font-size: large;
-  color: white
+  color: white;
 }
 
 header nav ul li a:hover {
-  color: rgb(173, 0, 253);
+  color: rgb(215, 228, 222);
   border-radius: 15px;
   text-shadow: none;
-  background-color: rgba(214, 184, 214, 0.712);
+  background-color: #0fa,
+}
+
+.title, a {
+  color: white;
+  text-shadow:
+  /* white glow */
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  /* green glow */
+  0 0 42px #0fa,
+  0 0 82px #0fa,
+  0 0 92px #0fa,
+  0 0 102px #0fa,
+  0 0 151px #0fa;
+}
+
+
+/* flicker */
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow: 0 0 4px #fff,
+    0 0 11px #fff,
+    0 0 19px #fff,
+    0 0 40px #0fa,
+    0 0 80px #0fa,
+    0 0 90px #0fa,
+    0 0 100px #0fa,
+    0 0 150px #0fa;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+
+footer {
+  padding: 40px 35px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+
 }
