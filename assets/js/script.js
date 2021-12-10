@@ -57,6 +57,7 @@ var displayImage = function (imageUrl) {
 // This function creates a list of ingredients
 var displayRecipe = function (data) {
     var mainContainer = document.getElementById("container")
+    mainContainer.classList.add("tile", "is-child", "is-4")
     var drinkName = document.createElement("div")
     drinkName.textContent = data.drinks[0].strDrink
     mainContainer.appendChild(drinkName)
