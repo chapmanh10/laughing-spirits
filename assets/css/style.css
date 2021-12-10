@@ -30,21 +30,21 @@ header nav ul {
   list-style: none;
 }
 
-header nav ul li a {
+header nav ul li div {
   padding: 10px 15px;
   font-weight: lighter;
   font-size: large;
   color: white;
 }
 
-header nav ul li a:hover {
+header nav ul li div:hover {
   color: rgb(215, 228, 222);
   border-radius: 15px;
   text-shadow: none;
   background-color: #0fa,
 }
 
-.title, a {
+.title, li div {
   color: white;
   text-shadow:
   /* white glow */
@@ -84,7 +84,7 @@ header nav ul li a:hover {
 
 
 footer {
-  padding: 20px 25px;
+  padding: 10px 15px;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
