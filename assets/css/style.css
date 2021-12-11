@@ -1,7 +1,7 @@
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   background-image: url("../images/background.jpg");
-  height: 900px;
+  height: 1200px;
 }
 
 header {
@@ -92,13 +92,14 @@ header nav ul li div:hover {
 }
 
 
-footer {
+#actualFooter {
   padding: 10px 15px;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
   position: fixed;
   bottom: 0;
+  margin-top: 20px;
   background-color: rgb(230, 32, 220);
   background-image: linear-gradient(45deg, #d353da 0%, #6a39db 52%, #ed2bff 90%);
   opacity: .7;
