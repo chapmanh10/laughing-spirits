@@ -92,3 +92,5 @@ var displayRecipe = function (data) {
     instructionsContainer.appendChild(instructionsText)
 
 }
+
+//Make cocktails cards
