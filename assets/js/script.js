@@ -34,44 +34,57 @@ var getCockTail = function (drinkID) {
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
-                    displayImage(data.drinks[0].strDrinkThumb)
-                    displayRecipe(data)
+                    displayCard(data)
                 })
             }
         })
 }
 
 // This function grabs the image from the array and displays it on the page
-var displayImage = function (imageUrl) {
-    var image = document.createElement('img')
-    image.src = imageUrl
+var displayCard = function (data) {
+    
     var mainContainer = document.getElementById("container")
     mainContainer.innerHTML = ""
-    var figure = document.createElement("figure")
-    figure.classList.add("image", "is-128x128")
-    mainContainer.appendChild(figure)
-    image.classList.add("is-rounded")
-    figure.appendChild(image)
-}
-
-// This function creates a list of ingredients
-var displayRecipe = function (data) {
-    var mainContainer = document.getElementById("container")
     mainContainer.classList.add("tile", "is-child", "is-4")
-    mainContainer.classList.add("display")
-    var drinkName = document.createElement("div")
+    var cardHolder = document.createElement("div")
+    cardHolder.classList.add("card")
+    mainContainer.appendChild(cardHolder)
+    var cardDiv = document.createElement("div")
+    cardDiv.classList.add("card-image")
+    cardHolder.appendChild(cardDiv)
+    var figure = document.createElement("figure")
+    figure.classList.add("image", "is-4by3")
+    cardDiv.appendChild(figure)
+    var image = document.createElement('img')
+    image.src = data.drinks[0].strDrinkThumb
+    figure.appendChild(image)
+    var cardContent = document.createElement("div")
+    cardContent.classList.add("card-content")
+    cardHolder.appendChild(cardContent)
+    var media = document.createElement("div")
+    media.classList.add("media")
+    cardContent.appendChild(media)
+    var mediaContent = document.createElement("div")
+    mediaContent.classList.add("media-content")
+    media.appendChild(mediaContent)
+    var drinkName = document.createElement("p")
     drinkName.textContent = data.drinks[0].strDrink
-    mainContainer.appendChild(drinkName)
-    var ingredientTitle = document.createElement("div")
+    drinkName.classList.add("title", "is-4")
+    mediaContent.appendChild(drinkName)
+    var ingredientTitle = document.createElement("p")
     ingredientTitle.textContent = "Ingredients"
-    mainContainer.appendChild(ingredientTitle)
+    mediaContent.appendChild(ingredientTitle)
     var recipeContainer = document.createElement("ul")
-    mainContainer.appendChild(recipeContainer)
+    mediaContent.appendChild(recipeContainer)
+    var content = document.createElement("div")
+    content.classList.add("content")
+    cardContent.appendChild(content)
     var instructionsTitle = document.createElement("div")
     instructionsTitle.textContent = "Instructions"
-    mainContainer.appendChild(instructionsTitle)
+    instructionsTitle.classList.add("title", "is-4")
+    content.appendChild(instructionsTitle)
     var instructionsContainer = document.createElement("div")
-    mainContainer.appendChild(instructionsContainer)
+    content.appendChild(instructionsContainer)
 
 // This for loop ensures the right amount of ingredients display for the drink
     for (var i = 1; i < 16; i++) {
@@ -92,3 +105,4 @@ var displayRecipe = function (data) {
     instructionsContainer.appendChild(instructionsText)
 
 }
+

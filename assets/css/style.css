@@ -1,6 +1,6 @@
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
-  background-image: url("https://thumbs.dreamstime.com/b/brick-walls-neon-light-background-rays-glow-211376300.jpg");
+  background-image: url("../images/background.jpg");
   height: 900px;
 }
 
@@ -46,7 +46,7 @@ header nav ul li div:hover {
   background-color: #0fa,
 }
 
-.title, li div, h4 {
+.neon-title, li div, h4 {
   color: white;
   text-shadow:
   /* white glow */
