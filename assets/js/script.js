@@ -45,19 +45,25 @@ var displayCard = function (data) {
     
     var mainContainer = document.getElementById("container")
     mainContainer.innerHTML = ""
-    mainContainer.classList.add("tile", "is-child", "is-4")
+    mainContainer.classList.add("tile", "is-child", "is-3")
+
+    //Div to hold the cocktail card
     var cardHolder = document.createElement("div")
     cardHolder.classList.add("card")
     mainContainer.appendChild(cardHolder)
     var cardDiv = document.createElement("div")
     cardDiv.classList.add("card-image")
     cardHolder.appendChild(cardDiv)
+
+    //Image creation
     var figure = document.createElement("figure")
     figure.classList.add("image", "is-4by3")
     cardDiv.appendChild(figure)
     var image = document.createElement('img')
     image.src = data.drinks[0].strDrinkThumb
     figure.appendChild(image)
+
+    //Div to hold the content of the card
     var cardContent = document.createElement("div")
     cardContent.classList.add("card-content")
     cardHolder.appendChild(cardContent)
@@ -67,6 +73,8 @@ var displayCard = function (data) {
     var mediaContent = document.createElement("div")
     mediaContent.classList.add("media-content")
     media.appendChild(mediaContent)
+
+    //Drink information
     var drinkName = document.createElement("p")
     drinkName.textContent = data.drinks[0].strDrink
     drinkName.classList.add("title", "is-4")
@@ -85,6 +93,16 @@ var displayCard = function (data) {
     content.appendChild(instructionsTitle)
     var instructionsContainer = document.createElement("div")
     content.appendChild(instructionsContainer)
+
+    //Save button
+    var footer = document.createElement("footer")
+    footer.classList.add("card-footer")
+    cardHolder.appendChild(footer)
+    var savebtn = document.createElement("button")
+    savebtn.classList.add("card-footer-item", "button", "is-info")
+    savebtn.textContent = "Save to Favorites"
+    footer.appendChild(savebtn)
+
 
 // This for loop ensures the right amount of ingredients display for the drink
     for (var i = 1; i < 16; i++) {
