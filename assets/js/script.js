@@ -58,6 +58,7 @@ var displayImage = function (imageUrl) {
 var displayRecipe = function (data) {
     var mainContainer = document.getElementById("container")
     mainContainer.classList.add("tile", "is-child", "is-4")
+    mainContainer.classList.add("display")
     var drinkName = document.createElement("div")
     drinkName.textContent = data.drinks[0].strDrink
     mainContainer.appendChild(drinkName)
