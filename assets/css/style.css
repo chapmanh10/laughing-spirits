@@ -1,9 +1,9 @@
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
-
+ /* header/nav starts here */
 header {
-  background-image: url("https://cdn2.vectorstock.com/i/1000x1000/46/11/cocktails-alcohol-drinks-background-seamless-vector-3514611.jpg");
+  background-image: url("https://thumbs.dreamstime.com/b/brick-walls-neon-light-background-rays-glow-211376300.jpg");
   font-size: x-large;
   background-color: rgba(0, 0, 0, 0.541);
   text-align: center;
@@ -30,21 +30,21 @@ header nav ul {
   list-style: none;
 }
 
-header nav ul li a {
+header nav ul li {
   padding: 10px 15px;
   font-weight: lighter;
   font-size: large;
   color: white;
 }
 
-header nav ul li a:hover {
+header nav ul li:hover {
   color: rgb(215, 228, 222);
   border-radius: 15px;
   text-shadow: none;
   background-color: #0fa,
 }
 
-.title, a {
+.title, ul {
   color: white;
   text-shadow:
   /* white glow */
@@ -76,6 +76,8 @@ header nav ul li a:hover {
     text-shadow: none;
   }
 }
+/* header/nav ends */
+
 
 .description {
   text-align: center;
@@ -90,5 +92,6 @@ footer {
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: rgb(248, 248, 122);
+  background-color: rgb(0, 0, 0);
+  color: white
 }
