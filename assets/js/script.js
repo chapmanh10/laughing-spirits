@@ -48,7 +48,7 @@ var displayImage = function (imageUrl) {
     var mainContainer = document.getElementById("container")
     mainContainer.innerHTML = ""
     var figure = document.createElement("figure")
-    figure.classList.add("image", "is-128x128", "is-inline-block")
+    figure.classList.add("image", "is-128x128","is-inline-block")
     mainContainer.appendChild(figure)
     image.classList.add("is-rounded")
     figure.appendChild(image)
