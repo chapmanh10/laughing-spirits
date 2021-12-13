@@ -4,6 +4,24 @@ body {
   height: 900px;
 }
 
+.favButton {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+ color: plum;
+}
+.favButton:hover{
+  color: white;
+  text-shadow:
+  /* white glow */
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+}
 header {
   
   font-size: x-large;
