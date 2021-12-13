@@ -1,60 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
+      integrity="sha512-IgmDkwzs96t4SrChW29No3NXBIBv8baW490zk5aXvhCD8vuZM3yUSkbyTBcXohkySecyzIrUwiF/qV0cuPcL3Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
-    integrity="sha512-IgmDkwzs96t4SrChW29No3NXBIBv8baW490zk5aXvhCD8vuZM3yUSkbyTBcXohkySecyzIrUwiF/qV0cuPcL3Q=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>musical-spirits</title>
-</head>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>musical-spirits</title>
+  </head>
 
-<body>
-  <header>
-    <h1 class="neon-title">MUSICAL SPIRITS</h1>
-    <h4 class="sub-title">Pick your poison!</h4>
-    <nav>
-      <ul>
-        <li>
-          <div id="vodka">Vodka</div>
-        </li>
-        <li>
-          <div id="tequila">Tequila</div>
-        </li>
-        <li>
-          <div id="gin">Gin</div>
-        </li>
-        <li>
-          <div id="rum">Rum</div>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <body>
+    <header>
+      <div>
+        <a href="#" class="favButton"><i class="far fa-star"></i></a>
+      </div>
+      <h1 class="neon-title">LAUGHING SPIRITS</h1>
+      <h4 class="sub-title">Pick your poison!</h4>
+      <nav>
+        <ul>
+          <li>
+            <div id="vodka">Vodka</div>
+          </li>
+          <li>
+            <div id="tequila">Tequila</div>
+          </li>
+          <li>
+            <div id="gin">Gin</div>
+          </li>
+          <li>
+            <div id="rum">Rum</div>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
+    <main class="tile is-parent">
+      <!--Instruction top of page-->
+      <div class="description tile is-child is-4"></div>
+      <div id="container"></div>
+    </main>
 
-  <main class="tile is-parent">
-    <!--Instruction top of page-->
-    <div class="description tile is-child is-4"></div>
-    <div id="container">
+    <script src="./assets/js/script.js"></script>
+  </body>
+
+  <!-- footer with everyone's name & copy right -->
+  <footer>
+    <h2> &#128155 Made by Madeline, Houston, Kenia & Chris</h2>
+    <div>
+      Drink Up &#127865;
+      <br />
+      &copy; 2021 Laughing Spirits
     </div>
-  </main>
-
-  <script src="./assets/js/script.js"></script>
-</body>
-
-
-
-<!-- footer with everyone's name & copy right -->
-<footer>
-  <h2>❤️ Made by Madeline, Houston, Kenia & Chris</h2>
-  <div>
-    Drink Up &#127865;
-    <br />
-    &copy; 2021 Musical Spirits
-  </div>
-</footer>
-
+  </footer>
 </html>
