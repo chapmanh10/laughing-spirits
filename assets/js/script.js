@@ -22,10 +22,10 @@ var navItemVodka = document.getElementById("vodka")
 var navItemGin = document.getElementById("gin")
 var navItemRum = document.getElementById("rum")
 var navItemTequila = document.getElementById("tequila")
-navItemVodka.addEventListener("click", function () { handleLiqourClick("vodka") })
-navItemGin.addEventListener("click", function () { handleLiqourClick("gin") })
-navItemTequila.addEventListener("click", function () { handleLiqourClick("tequila") })
-navItemRum.addEventListener("click", function () { handleLiqourClick("rum") })
+navItemVodka.addEventListener("click", function () { handleLiqourClick("vodka"), displayJoke() })
+navItemGin.addEventListener("click", function () { handleLiqourClick("gin"), displayJoke() })
+navItemTequila.addEventListener("click", function () { handleLiqourClick("tequila"), displayJoke() })
+navItemRum.addEventListener("click", function () { handleLiqourClick("rum"), displayJoke() })
 
 //This function takes the random drink ID and gets the information for that drink
 var getCockTail = function (drinkID) {
@@ -35,15 +35,49 @@ var getCockTail = function (drinkID) {
             if (response.ok) {
                 response.json().then(function (data) {
                     displayCard(data)
+                    getJoke()
                 })
             }
         })
 }
 
+// This function will call a joke
+var getJoke = function () {
+    var apiUrl = "https://v2.jokeapi.dev/joke/programming,christmas,spooky,pun?safe-mode&type=single"
+        fetch(apiUrl)
+            .then(function(response) {
+                if (response.ok) {
+                    response.json().then(function (data) {
+                        displayJoke(data)
+                    })
+                }
+            })
+}
+
+
+// This function will display the joke
+var displayJoke = function (jokeData) {
+    var jokeContainer = document.getElementById("jokeContainer")
+    jokeContainer.innerHTML = ""
+
+    var jokeCardDiv = document.createElement("div")
+    jokeCardDiv.classList.add("card")
+    jokeContainer.appendChild(jokeCardDiv)
+
+    var jokeCardContent = document.createElement("div")
+    jokeCardContent.classList.add("card-content")
+    jokeCardDiv.appendChild(jokeCardContent)
+    
+    var jokeTitle = document.createElement("p")
+    jokeTitle.classList.add("title")
+    jokeTitle.textContent = jokeData.joke
+    jokeCardContent.appendChild(jokeTitle)
+}
+
 // This function grabs the image from the array and displays it on the page
 var displayCard = function (data) {
     
-    var mainContainer = document.getElementById("container")
+    var mainContainer = document.getElementById("cocktail-container")
     mainContainer.innerHTML = ""
     mainContainer.classList.add("tile", "is-child", "is-3")
 
