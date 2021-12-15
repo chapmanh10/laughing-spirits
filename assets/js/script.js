@@ -34,44 +34,76 @@ var getCockTail = function (drinkID) {
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
-                    displayImage(data.drinks[0].strDrinkThumb)
-                    displayRecipe(data)
+                    displayCard(data)
+                   
                 })
             }
         })
 }
 
 // This function grabs the image from the array and displays it on the page
-var displayImage = function (imageUrl) {
-    var image = document.createElement('img')
-    image.src = imageUrl
+var displayCard = function (data) {
+    
     var mainContainer = document.getElementById("container")
     mainContainer.innerHTML = ""
-    var figure = document.createElement("figure")
-    figure.classList.add("image", "is-128x128","is-inline-block")
-    mainContainer.appendChild(figure)
-    image.classList.add("is-rounded")
-    figure.appendChild(image)
-}
+    mainContainer.classList.add("tile", "is-child", "is-3")
 
-// This function creates a list of ingredients
-var displayRecipe = function (data) {
-    var mainContainer = document.getElementById("container")
-    mainContainer.classList.add("tile", "is-child", "is-4")
-    mainContainer.classList.add("display")
-    var drinkName = document.createElement("div")
+    //Div to hold the cocktail card
+    var cardHolder = document.createElement("div")
+    cardHolder.classList.add("card")
+    mainContainer.appendChild(cardHolder)
+    var cardDiv = document.createElement("div")
+    cardDiv.classList.add("card-image")
+    cardHolder.appendChild(cardDiv)
+
+    //Image creation
+    var figure = document.createElement("figure")
+    figure.classList.add("image", "is-4by3")
+    cardDiv.appendChild(figure)
+    var image = document.createElement('img')
+    image.src = data.drinks[0].strDrinkThumb
+    figure.appendChild(image)
+
+    //Div to hold the content of the card
+    var cardContent = document.createElement("div")
+    cardContent.classList.add("card-content")
+    cardHolder.appendChild(cardContent)
+    var media = document.createElement("div")
+    media.classList.add("media")
+    cardContent.appendChild(media)
+    var mediaContent = document.createElement("div")
+    mediaContent.classList.add("media-content")
+    media.appendChild(mediaContent)
+
+    //Drink information
+    var drinkName = document.createElement("p")
     drinkName.textContent = data.drinks[0].strDrink
-    mainContainer.appendChild(drinkName)
-    var ingredientTitle = document.createElement("div")
+    drinkName.classList.add("title", "is-4")
+    mediaContent.appendChild(drinkName)
+    var ingredientTitle = document.createElement("p")
     ingredientTitle.textContent = "Ingredients"
-    mainContainer.appendChild(ingredientTitle)
+    mediaContent.appendChild(ingredientTitle)
     var recipeContainer = document.createElement("ul")
-    mainContainer.appendChild(recipeContainer)
+    mediaContent.appendChild(recipeContainer)
+    var content = document.createElement("div")
+    content.classList.add("content")
+    cardContent.appendChild(content)
     var instructionsTitle = document.createElement("div")
     instructionsTitle.textContent = "Instructions"
-    mainContainer.appendChild(instructionsTitle)
+    instructionsTitle.classList.add("title", "is-4")
+    content.appendChild(instructionsTitle)
     var instructionsContainer = document.createElement("div")
-    mainContainer.appendChild(instructionsContainer)
+    content.appendChild(instructionsContainer)
+
+    //Save button
+    var footer = document.createElement("footer")
+    footer.classList.add("card-footer")
+    cardHolder.appendChild(footer)
+    var savebtn = document.createElement("button")
+    savebtn.classList.add("card-footer-item", "button", "is-info")
+    savebtn.textContent = "Save to Favorites"
+    footer.appendChild(savebtn)
+
 
 // This for loop ensures the right amount of ingredients display for the drink
     for (var i = 1; i < 16; i++) {
@@ -91,6 +123,35 @@ var displayRecipe = function (data) {
     instructionsText.textContent = data.drinks[0].strInstructions
     instructionsContainer.appendChild(instructionsText)
 
+// ------------------------------------------------------------------------------
+//This will save that drink info into local storage 
+// and will increase the count when the save to favorites button it clicked 
+$(savebtn).on('click',function(){
+    var count=$('#count');
+    console.log('click save favorites');
+    var items=localStorage.setItem('container',JSON.stringify(data.drinks[0]));
+    $(count).html(function(i, val) { return +val+1 });     
+    savefav();  
+});
 }
+// This will create a list of drinks saved
+function savefav(){
+    var place=$('#save');
+    var list =JSON.parse(localStorage.getItem('container'));
+    var name=list.strDrink;
+    var img=list.strDrinkThumb;
+    place.append('<button class="dropdown-item" id="listbtn"><img src='+img+' width="40" height="40"> '+name+'</button>');
+//This button will show the items saved 
+    $('.btn').on('click',function(){
+    console.log('i was clicked'); 
+    $(place).show(2000);
+    });
+// This will display the card info again 
+    $('#listbtn').on('click',function(){ 
+});
+ }
 
-//Make cocktails cards
+//savefav();
+
+
+  

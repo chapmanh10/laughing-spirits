@@ -1,7 +1,7 @@
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
-  background-image: url("https://thumbs.dreamstime.com/b/brick-walls-neon-light-background-rays-glow-211376300.jpg");
-  height: 900px;
+  background-image: url("../images/background.jpg");
+  height: 1200px;
 }
 
 header {
@@ -46,7 +46,7 @@ header nav ul li div:hover {
   background-color: #0fa,
 }
 
-.title, li div, h4 {
+.neon-title, li div, h4 {
   color: white;
   text-shadow:
   /* white glow */
@@ -92,15 +92,17 @@ header nav ul li div:hover {
 }
 
 
-footer {
+#actualFooter {
   padding: 10px 15px;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
   position: fixed;
   bottom: 0;
+  margin-top: 20px;
   background-color: rgb(230, 32, 220);
   background-image: linear-gradient(45deg, #d353da 0%, #6a39db 52%, #ed2bff 90%);
   opacity: .7;
   color:white;
 }
+
