@@ -43,7 +43,7 @@ var getCockTail = function (drinkID) {
 
 // This function will call a joke
 var getJoke = function () {
-    var apiUrl = "https://v2.jokeapi.dev/joke/programming,christmas,spooky,pun?safe-mode&type=single"
+    var apiUrl = "https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Pun,Spooky,Christmas?blacklistFlags=nsfw,racist,sexist,explicit&type=single"
         fetch(apiUrl)
             .then(function(response) {
                 if (response.ok) {
@@ -57,6 +57,9 @@ var getJoke = function () {
 
 // This function will display the joke
 var displayJoke = function (jokeData) {
+    if (jokeData=== undefined) {
+        return
+    }
     var jokeContainer = document.getElementById("jokeContainer")
     jokeContainer.innerHTML = ""
 
