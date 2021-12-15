@@ -156,5 +156,37 @@ var displayCard = function (data) {
     instructionsText.textContent = data.drinks[0].strInstructions
     instructionsContainer.appendChild(instructionsText)
 
+// ------------------------------------------------------------------------------
+//This will save that drink info into local storage 
+// and will increase the count when the save to favorites button it clicked 
+$(savebtn).one('click',function(){
+    var count=$('#count');
+    console.log('click save favorites');
+    localStorage.setItem('container',JSON.stringify(data.drinks[0]));
+    $(count).html(function(i, val) { return +val+1 });     
+    savefav();
+    });
 }
+// This will create a list of drinks saved
+function savefav(){
+    var place=$('#save');
+    var list =JSON.parse(localStorage.getItem('container'));
+    var name=list.strDrink;
+    var img=list.strDrinkThumb;
+    place.append('<button class="dropdown-item" id="listbtn"><img src='+img+' width="40" height="40"> '+name+'</button>');
 
+//This button will show the items saved 
+    $('.btn').on('click',function(){
+    console.log('i was clicked'); 
+    $(place).toggle();
+    });
+// This will display the card info again 
+    $('#listbtn').on('click',function(){ 
+
+    });
+ }
+
+//savefav();
+
+
+  
