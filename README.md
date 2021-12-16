@@ -8,11 +8,11 @@
 - [Motivation](#motivation)
 - [Project Demo](#project-demo)
 - [Future Development](#future-development)
-- [Acknowledgments](#acknowledgements)
+- [Acknowledgments](#acknowledgments)
 
 ## <a name="team-members"></a>Team Members
 - Madeline Garcia-Cabrera
-- Huston Chapman
+- Houston Chapman
 - Kenia Lizama-Gamez
 - Chris Fraser
 
@@ -50,5 +50,7 @@ Making sure users get to have a good time. Users look up cocktails and while doi
 - Send/share  the saved list  of cocktails
 
 ## Acknowledgments
+- [Joke API](https://sv443.net/jokeapi/v2/)
+- [TheCocktailDB](https://www.thecocktaildb.com/api.php)
 - [Font Awesome](https://fontawesome.com/)
 - [Bulma](https://bulma.io/)
