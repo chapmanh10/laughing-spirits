@@ -1,9 +1,11 @@
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
+  background-image: url("../images/background.jpg");
+  height: 1400px;
 }
 
 header {
-  background-image: url("https://cdn2.vectorstock.com/i/1000x1000/46/11/cocktails-alcohol-drinks-background-seamless-vector-3514611.jpg");
+  
   font-size: x-large;
   background-color: rgba(0, 0, 0, 0.541);
   text-align: center;
@@ -30,21 +32,21 @@ header nav ul {
   list-style: none;
 }
 
-header nav ul li a {
+header nav ul li div {
   padding: 10px 15px;
   font-weight: lighter;
-  font-size: large;
+  font-size: 32px;
   color: white;
 }
 
-header nav ul li a:hover {
+header nav ul li div:hover {
   color: rgb(215, 228, 222);
   border-radius: 15px;
   text-shadow: none;
   background-color: #0fa,
 }
 
-.title, a {
+.neon-title, li div, h4 {
   color: white;
   text-shadow:
   /* white glow */
@@ -80,15 +82,27 @@ header nav ul li a:hover {
 .description {
   text-align: center;
   font-size: 36px;
+  color: white;
+}
+
+.display {
+  text-align: center;
+  font-size: 18px;
+  color: white;
 }
 
 
-footer {
-  padding: 20px 25px;
+#actualFooter {
+  padding: 10px 15px;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: rgb(248, 248, 122);
+  margin-top: 20px;
+  background-color: rgb(230, 32, 220);
+  background-image: linear-gradient(45deg, #d353da 0%, #6a39db 52%, #ed2bff 90%);
+  opacity: .7;
+  color:white;
 }
+
