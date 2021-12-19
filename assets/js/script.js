@@ -161,32 +161,47 @@ var displayCard = function (data) {
 // and will increase the count when the save to favorites button it clicked 
 $(savebtn).one('click',function(){
     var count=$('#count');
-    console.log('click save favorites');
     localStorage.setItem('container',JSON.stringify(data.drinks[0]));
+
     $(count).html(function(i, val) { return +val+1 });     
     savefav();
     });
 }
+
 // This will create a list of drinks saved
 function savefav(){
     var place=$('#save');
     var list =JSON.parse(localStorage.getItem('container'));
-    var name=list.strDrink;
-    var img=list.strDrinkThumb;
-    place.append('<button class="dropdown-item" id="listbtn"><img src='+img+' width="40" height="40"> '+name+'</button>');
 
+    var name=list.strDrink;
+    console.log(name);
+    var img=list.strDrinkThumb;
+
+    var classlist=$('<div>');
+   
+    var button=$('<button class="dropdown-item listbtn"><img src='+ img +' width="40" height="40">'+ name +'</button>');
+    classlist.append(button);
+    place.prepend(classlist);
+   
 //This button will show the items saved 
     $('.btn').on('click',function(){
-    console.log('i was clicked'); 
-    $(place).toggle();
+         $(place).hide();
+     $('.btn').on('click',function(){
+        $(place).show(5000);
+        });
     });
-// This will display the card info again 
-    $('#listbtn').on('click',function(){ 
+//This will display the card info again 
+    $('.listbtn').on('click',function(){ 
+        var cast=$('#cocktail-container')
+        var castjoke=$('#jokeContainer')
 
+        $(castjoke).empty();
+        $(cast).empty();
+
+        getCockTail(list.idDrink);
     });
- }
 
-//savefav();
+}
 
 
-  
+
